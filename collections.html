@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <link rel="html" href="index.html">
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <title>My Collection</title>
+</head>
+
+<body background="assets/images/floor-tile.png">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: maroon">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#!">My Collection</a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="collectorHome.html">Search <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="collections.html">Collection</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+
+    <div class="row">
+
+        <div class="col-md-8" style="margin-left: 12%">
+            <table class="table" id="collection-table">
+                <thead style="background:maroon; color: white; font-weight: bold;">
+                    <tr>
+                        <th>Album:</th>
+                        <th>Artist:</th>
+                    </tr>
+                </thead>
+                <tbody style="background: white; font-weight: bold;">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="assets/javascript/collector.js"></script>
+    </script>
+
+</body>
+
+</html>

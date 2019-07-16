@@ -1,0 +1,11 @@
+.limitPics {
+    padding-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  #hidden {
+    display: none;
+  }

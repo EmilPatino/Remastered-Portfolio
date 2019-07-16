@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="collections.html">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <title>Record Collector</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/collectorStyle.css">
+</head>
+
+<body background="assets/images/floor-tile.png">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: maroon">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarTogglerDemo02">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#!">Record Collector</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#!">Search <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="collections.html">Collection</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <br>
+
+  <div class="container">
+    <div class="jumbotron" style="background-color: maroon; color: white; font-weight: bold">
+      <h3 class="text-center">Welcome to Record Collector!</h3>
+      <h5 class="text-center">The App that allows you to search for records and keep track of your
+        collections.</h5>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-4">
+          <div class="card-header" style="background:maroon; color: white; font-weight: bold">Search for an Album</div>
+          <div class="card-body" style="background-color: rgb(248, 248, 221)">
+
+            <form>
+              <div class="form-group">
+                <label for="title-input"><b>Title (Required)</b></label>
+                <input class="form-control" style="background-color: beige" id="title-input" type="text">
+              </div>
+              <div class="form-group">
+                <label for="artist-input"><b>Artist Name (Required)</b></label>
+                <input class="form-control" style="background-color: beige" id="artist-input" type="text">
+              </div>
+              <!-- <div class="form-group">
+                <label for="genre-input"><b>Genre</b></label>
+                <input class="form-control" style="background-color: beige" id="genre-input" type="text">
+              </div>
+              <div class="form-group">
+                <label for="year-input"><b>Year Released</b></label>
+                <input class="form-control" style="background-color: beige" id="year-input" type="text">
+              </div> -->
+              <button type="button" class="btn btn-outline-dark float-right" id="search-btn">Search</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container" id="hidden">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-4">
+          <div class="card-header" style="background:maroon; color: white; font-weight: bold">Search Result</div>
+
+          <div class="row no-gutters" style="background-color: rgb(248, 248, 221)">
+            <div class="col-md-4">
+              <img src="" class="card-img" id="image-result">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><b> Title: </b> <span id="title-result"> Title Example</span></h5>
+                <p class="card-text"><b>Artist Description: <span id="artistName"></span></b><span
+                    id="description-result">Some quick example text to build
+                    on the card title and make up the bulk of the card's content.</span></p>
+                <p class="card-text"><b>Album Description: <span id="aName"></span></b><span id="snippet"></span></li>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Genre: </b><span
+                        id="genre-result"></span></li>
+                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Year Released: </b><span
+                        id="year-result"></span></li>
+                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Fair Pricing: </b><span
+                        id="fair-price-result"></span></li>
+                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Good Pricing: </b><span
+                        id="good-price-result"></span></li>
+                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Mint Pricing: </b><span
+                        id="mint-price-result"></span></li>
+                  </ul>
+                  <br>
+                  <button type="button" class="btn btn-outline-dark float-right" id="collection-btn">Add to
+                    Collection</button>
+                  <br><br>
+
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+
+    $("#search-btn").on("click", function (event) {
+      event.preventDefault();
+
+      $("#fair-price-result").text("Not Available");
+      $("#good-price-result").text("Not Available");
+      $("#mint-price-result").text("Not Available");
+      $("#hidden").css("display", "block");
+
+      var sTitle = $("#title-input").val().trim();
+      var sArtist = $("#artist-input").val().trim();
+      // var sGenre = $("#genre-input").val().trim();
+      // var sYear = $("#year-input").val().trim();
+
+      console.log(sTitle);
+      console.log(sArtist);
+      // console.log(sGenre);
+      // console.log(sYear);
+
+      var queryURL = "https://api.discogs.com/database/search?release_title=" + sTitle + "&artist=" + sArtist + "&format=vinyl&per_page=1&page=1&key=CQwYyYowOAghyybYpMYL&secret=hlsXvJXvbpgfeoNJJHhOjEmSWzBgKvnY";
+
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        console.log(response);
+        console.log(response.results[0].title);
+        var imageResult = $("#image-result").attr("src", response.results[0].cover_image).addClass("limitPics");
+        var titleResult = $("#title-result").text(response.results[0].title);
+        var yearResult = $("#year-result").text(response.results[0].year);
+        var genreResult = $("#genre-result").text(response.results[0].genre);
+        var releaseID = response.results[0].id;
+        console.log(releaseID);
+
+        var queryURL = "https://api.discogs.com/marketplace/price_suggestions/" + releaseID + "?token=IxYjEFQzSJoGKBwroxGLmyBkwplVfHZgZkrcdxeg";
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function (response) {
+          console.log(response);
+
+          var fairPriceResults = response['Fair (F)'].value;
+          var fixedFairPrice = fairPriceResults.toFixed(2);
+          $("#fair-price-result").text("$" + fixedFairPrice);
+
+          var goodPriceResults = response['Good (G)'].value;
+          var fixedGoodPrice = goodPriceResults.toFixed(2);
+          $("#good-price-result").text("$" + fixedGoodPrice);
+
+          var mintPriceResults = response['Mint (M)'].value;
+          var fixedMintPrice = mintPriceResults.toFixed(2);
+          $("#mint-price-result").text("$" + fixedMintPrice);
+
+        });
+      });
+    });
+
+    function artistBlurb() {
+      $("#search-btn").on("click", function (event) {
+        event.preventDefault();
+
+        var aSearch = $("#artist-input").val().trim();
+        var tSearch = $("#title-input").val().trim();
+
+        var queryURL = "https://en.wikipedia.org/w/api.php?action=query&&format=json&origin=*&list=search&srsearch=" + aSearch + "%" + tSearch;
+
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function (response) {
+          console.log(response)
+
+          var searchTitle = response.query.search[0].title;
+          var searchSnippet = response.query.search[0].snippet;
+          var pageId = response.query.search[0].pageid;
+
+          console.log(searchTitle);
+          console.log(searchSnippet);
+
+          $("#aName").html('<a href="https://en.wikipedia.org/?curid=' + pageId + '">' + searchTitle + '<i>(wikipedia excerpt)</i></a>:');
+          $("#snippet").html('...' + searchSnippet + '...');
+          console.log(queryURL);
+
+
+        });
+      });
+    };
+
+    function artistDescription() {
+      $("#search-btn").on("click", function (event) {
+        event.preventDefault();
+
+        var aSearch2 = $("#artist-input").val().trim();
+
+
+        var queryURL2 = "https://en.wikipedia.org/w/api.php?action=query&&format=json&origin=*&list=search&srsearch=" + aSearch2;
+
+        $.ajax({
+          url: queryURL2,
+          method: "GET"
+        }).then(function (response) {
+          console.log(response)
+
+          var searchTitle2 = response.query.search[0].title;
+          var searchSnippet2 = response.query.search[0].snippet;
+          var pageId2 = response.query.search[0].pageid;
+
+          console.log(searchTitle2);
+
+
+          $("#artistName").html('<a href="https://en.wikipedia.org/?curid=' + pageId2 + '">' + searchTitle2 + '<i>(wikipedia excerpt)</i></a>:');
+          $("#description-result").html('...' + searchSnippet2 + '...');
+          console.log(queryURL2);
+
+
+        });
+      });
+    };
+
+    artistBlurb();
+    artistDescription();
+
+  </script>
+
+  <style>
+    .limitPics {
+      padding-top: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+    }
+
+    #hidden {
+      display: none;
+    }
+  </style>
+
+<script src="assets/javascript/collector.js"></script>
+
+</body>
+
+</html>

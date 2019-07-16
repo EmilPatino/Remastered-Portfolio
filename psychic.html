@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pyschic Games</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+<h1 class="jumbotron">Welcome to the Pyschic Game!!!</h1>
+
+<h2>Try guessing what letter I am thinking. You have nine guesses per round.</h2>
+
+<!-- HTML sections with preset values for before the script runs-->
+<p>Wins:<span id="wins"> 0</span></p>
+<p>Losses:<span id="losses"> 0</span></p>
+<p>Guesses:<span id="guesses"></span></p>
+<p>Guesses Left:<span id="guesses-left"> 9</span></p>
+
+<script src="assets/game.js"></script>
+
+</body>
+
+</html>
+
+<!-- PsuedoCode
+1. An array with a for loop that randomly selects a letter. 
+
+2. On click that capures what was pressed but that limits it to only letters.
+
+3. If function that checks whether the user guess equals the computer guess and increases the win ticker and resets the user guess array
+
+4. Else statement that adds string to user guess array 
+
+5. Function that counts items in array and sets that as the variable for Guesses
+
+6 Function that subtracts 9 by Guesses and sets that as the variable for Guesses left
+
+7. If statement that checks whether the user guess array equals 9 increases and loses ticker and resets the array -->
+
