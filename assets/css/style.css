@@ -16,21 +16,12 @@ html, body {
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
-  .bg-1 { 
-    background-color: #1abc9c; /* Green */
-    color: #ffffff;
-  }
-  .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
-  }
-  .bg-3 { 
-    background-color: #ffffff; /* White */
-    color: #555555;
-  }
-  .bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
-    color: #fff;
+ 
+  #motto {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(114, 114, 114);
+    font-family: "Helvetica Neue", sans-serif;
   }
 
   .navbar {
@@ -87,6 +78,12 @@ html, body {
     line-height: 33px;
   }
 
+  #contact-text{
+    color: #666666;
+    font-family: "Helvetica Neue", sans-serif;
+    line-height: 20px;
+  }
+
 /* Style the content */
   .content {
     background-color: #ffffff;
@@ -107,13 +104,50 @@ html, body {
     border-top: 8px solid #4aaaa5;
  }
 
- /*----------------------------Portfolio.HTML---------------------------------*/
+.card {
+  box-shadow: 0;
+  transition: 0.3s;
+  border-radius: 4px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
 
-/*portpic Styling*/
+.card:hover {
+  box-shadow: 2px 4px rgba(0,0,0,0.2);
+}
 
-.portpic{
-  background-color: #4aaaa5;
-  font-size: 18px;
+img {
+  padding-top: 1px;
+  border-radius: 10px 10px 5px 5px;
+}
+
+.github {
+  color: #666666;
   text-align: center;
-  border-radius: 3px;
+}
+
+.title {
+  color: #666666;
+  text-align: center;
+}
+
+a:link {
+  color: rgb(98, 98, 98);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(98, 98, 98);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(0, 119, 99);
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: rgb(0, 62, 104);
+  background-color: transparent;
+  text-decoration: underline;
 }
