@@ -17,6 +17,11 @@ html, body {
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
  
+  .banner {
+    border-top: 2px solid rgb(0, 148, 148);
+    margin-top: 2px;
+  }
+
   #motto {
     text-align: center;
     font-size: 18px;
