@@ -136,7 +136,7 @@ number = 30;
       $("#judgement").html("<p> Great Job!</p>");
     }
     else {
-      $("#judgement").html("<p> What a disappointment...</p>");
+      $("#judgement").html("<p> Get your shit together...</p>");
     }
 
     $("#dimension").css("display", "none");

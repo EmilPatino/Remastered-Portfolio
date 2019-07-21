@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+  }
+
+body {
+    background-image:url(../images/psychic-background.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#jumbo {
+    background-color: rgba(18, 18, 19, 0.431);
+    padding: 10px 30px 8px 30px;
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+}
+
+#jumbotext1 {
+    font-size: 28px;
+    color: whitesmoke;
+}
+
+#jumbotext2 {
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+#results{
+    color: whitesmoke;
+    font-size: 18px;
+    padding: 10px 30px 8px 30px;
+    background-color: rgba(18, 18, 19, 0.431);
+    }
+
+#rtext{
+font-size: 22px;
+text-align: center;
+}
