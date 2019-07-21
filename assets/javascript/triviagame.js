@@ -18,6 +18,9 @@ $("#start").on("click", start);
 function start() {
   clearInterval(intervalId);
   intervalId = setInterval(decrement, 1000);
+  $("#schmeckle").css("display", "block");
+  $("#jumbo1").css("display", "block");
+  $("#start").css("display", "none");
 }
 
 //  Decrement function
@@ -27,17 +30,62 @@ function decrement() {
   number--;
 
   //  Show number in HTML
-  $("#time-left").html("<h2> Time Remaining: " + number + "</h2>");
+  $("#time-left").html("<p> Time Remaining: " + number + "</p>");
 
 
   //  What happens once it hits 0
   if (number === 0) {
+    $("#schmeckle").css("display","none");
+    $("#wubba").css("display", "none");
+    $("#blitz").css("display", "none");
+    $("#crush").css("display", "none");
+    $("#dimension").css("display", "none");
+    $("#timesup").css("display", "block");
 
     //  Run  stop function
-    stop();
-    
-    //  Alert the user that time is up and provide score
-    alert("Time Up!");
+    stop2();
+  
+  };
+};
+
+function stop2() {
+  clearInterval(intervalId);
+  number = 30;
+};
+
+//  Functions to pull up next question
+$("#next1").on("click", next1);
+function next1() {
+  $("#schmeckle").css("display","none");
+  $("#wubba").css("display", "block");
+}
+
+$("#next2").on("click", next2);
+function next2() {
+  $("#wubba").css("display", "none");
+  $("#blitz").css("display", "block");
+}
+
+$("#next3").on("click", next3);
+function next3() {
+  $("#blitz").css("display", "none");
+  $("#crush").css("display", "block");
+}
+
+$("#next4").on("click", next4);
+function next4() {
+  $("#crush").css("display", "none");
+  $("#dimension").css("display", "block");
+}
+
+$("#next5").on("click", stop);
+
+//Stop function that resets to 30 seconds
+function stop() {
+clearInterval(intervalId);
+number = 30;
+
+//  Alert the user that time is up and provide score
 
     //Var for each value of an answer
     schmeckle = $("input[name='schmeckle']:checked").val();
@@ -58,47 +106,45 @@ function decrement() {
     else if (schmeckle  === "1") {
     right++;
     }
-   
-    
    if (wubba === "0") {
     wrong++;
     }
     else if (wubba  === "1") {
     right++;
     }
-
    if (blitz === "0") {
     wrong++;
     }
     else if (blitz  === "1") {
     right++;
     }
-   
    if (crush === "0") {
     wrong++;
     }
     else if (crush  === "1") {
     right++;
    }
-    
    if (dimension === "0") {
     wrong++;
     }
     else if (dimension  === "1") {
     right++;
     }
-
     noanswer = 5 - right - wrong;
 
-    alert("You got " + wrong + " wrong, " + right + " right, " + "and didn't answer " + noanswer);
-    
-  }
-}
+    if (right === 5){
+      $("#judgement").html("<p> Great Job!</p>");
+    }
+    else {
+      $("#judgement").html("<p> What a disappointment...</p>");
+    }
 
-//Stop function that resets to 30 seconds
-function stop() {
-clearInterval(intervalId);
-number = 30;
-}
+    $("#dimension").css("display", "none");
+    $("#results").css("display", "block");
+    $("#totalright").html(right);
+    $("#totalwrong").html(wrong);
+    $("#totalun").html(noanswer);
+    
+  };
 
 });

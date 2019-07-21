@@ -1,60 +1,111 @@
-.header {
-width: 250px;
-padding:  20px;
-background-color: orange;
-color: white; 
+html, body {
+    height: 100%;
+  }
+
+body {
+    background-image:url(../images/trivia-background.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#jumbo {
+    background-color: rgba(0, 0, 128, 0.431);
+    padding: 10px 30px 8px 30px;
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+}
+
+#jumbo1 {
+    display: none;
+}
+
+.jumbotext {
+    color: whitesmoke;
+
+}
+
+#jumbotext2 {
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+#time-left{
+    color: whitesmoke;
+}
+
+#schmeckle{
+background-color: rgba(0, 0, 128, 0.431);
+display: none;
+}
+
+#wubba{
+background-color: rgba(0, 0, 128, 0.431);
+display: none;
+}
+
+#blitz{
+background-color: rgba(0, 0, 128, 0.431);
+display: none;
+}
+
+#crush{
+background-color: rgba(0, 0, 128, 0.431);
+display: none;
+}
+
+#dimension{
+background-color: rgba(0, 0, 128, 0.431);
+display: none;
+}
+
+.card {
+box-shadow: 0;
+transition: 0.3s;
+border-radius: 4px;
+padding-bottom: 5px;
+padding-top: 5px;
+}
+
+#start{
+display: inline;
+}
+
+.questionpad{
+padding: 5px;
+}
+
+#results{
+background-color: rgba(0, 0, 128, 0.431);
+display: none;
+}
+
+#rtext{
 text-align: center;
+text-decoration: underline;
 }
 
-.instructions {
-padding: 20px;
-background-color: tan;
-width: 400px;
-color: green;
-font-weight: bold;
+#judgement{
+text-align: center;
+padding: 15px;
+font-size: 22px;
+color: whitesmoke;
 }
 
-.target {
-background-color: green;
-width: 100px;
-padding: 50px;
-margin-top: 10px;
-margin-bottom: 10px;
-display: block;
-font: 20px;
+#judgement2{
+text-align: center;
+padding: 15px;
+font-size: 22px;
+color: whitesmoke;
 }
 
-.result {
-background-color: cyan;
-padding: 20px;
-margin-top: 20px;
-margin-bottom: 20px;
-display: block;
+
+.pad2{
+padding: 10px;
+font-size: 18px;
+color: whitesmoke;
 }
 
-.crystal-images {
-width: 200px;
-height: 100px;
-}
-
-#yts {
-background-color: teal;
-width: 200px;
-color: white;
-font-weight: bold;
-padding-left: 2px;
-margin-top: 5px;
-margin-bottom: 5px;
-}
-
-.score {
-display: block;
-width: 200px;
-height: 100px;
-padding-left: 2px;
-background-color: teal;
-color: white;
-margin-top: 5px;
-margin-bottom: 5px;
-font-weight: bold;
+#timesup{
+display: none;
+background-color: rgba(0, 0, 128, 0.431);
 }
