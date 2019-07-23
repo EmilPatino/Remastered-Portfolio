@@ -24,14 +24,14 @@ var guessesLeftText = document.getElementById("guesses-left");
 
 // On click that captures what was pressed but that limits it to only letters.
 document.onkeyup = function (event) {
-var userGuess = " " + event.key + " ";
+var userGuess = event.key;
 
 //  If function that checks whether the user guess equals the computer guess and increases the win ticker and resets the user guess array
-    if ((userGuess === computerGuess)) {
+    if (userGuess === computerGuess) {
         wins++;
         guesses.splice(0,9);
         guessesLeft=9;
-        guessfunc();
+        
 
         //Dynamically create alert box
         $("#success").empty();
@@ -47,6 +47,8 @@ var userGuess = " " + event.key + " ";
         (successPop).append(successText);
         (successPop).append(successDialog);
         $("#success").append(successPop);
+
+        guessfunc();
     } 
 
 //Else statement that adds user guesses as a string in the user guess array and removes a guess left
