@@ -24,10 +24,10 @@ var guessesLeftText = document.getElementById("guesses-left");
 
 // On click that captures what was pressed but that limits it to only letters.
 document.onkeyup = function (event) {
-var userGuess = event.key;
+var userGuess = " " + event.key + " ";
 
 //  If function that checks whether the user guess equals the computer guess and increases the win ticker and resets the user guess array
-    if (userGuess === computerGuess) {
+    if (userGuess === " " + computerGuess + " ") {
         wins++;
         guesses.splice(0,9);
         guessesLeft=9;
