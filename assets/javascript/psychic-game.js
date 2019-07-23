@@ -1,13 +1,20 @@
 // An array with a for loop that randomly selects a letter.
+
 var computerGuesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //An dynamic array that keeps user guesses
-var guesses = []
- 
+var guesses = [];
+var computerGuess = [];
 // Variables to set the number of wins, loses, guesses, and guesses left.
 var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
+
+function guessfunc() {
+    // Randomly chooses a choice from the options array. This is the Computer's guess.
+    computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.length)];
+    console.log(computerGuess);
+  }
 
 // Variables that will refer to the HTML code by the IDs.
 var winsText = document.getElementById("wins");
@@ -17,16 +24,29 @@ var guessesLeftText = document.getElementById("guesses-left");
 
 // On click that captures what was pressed but that limits it to only letters.
 document.onkeyup = function (event) {
-var userGuess = event.key;
-
-// Randomly chooses a choice from the options array. This is the Computer's guess.
-var computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.length)];
+var userGuess = " " + event.key + " ";
 
 //  If function that checks whether the user guess equals the computer guess and increases the win ticker and resets the user guess array
     if ((userGuess === computerGuess)) {
         wins++;
         guesses.splice(0,9);
         guessesLeft=9;
+        guessfunc();
+
+        //Dynamically create alert box
+        $("#success").empty();
+        $("#failure").empty();
+        var successPop = $("<div>");
+        successPop.addClass("alert alert-success alert-dismissible");
+        var successText = $("<a>");
+        successText.addClass("close")
+        successText.attr("data-dismiss", "alert");
+        successText.html("&times;");
+        var successDialog = $("<p>");
+        successDialog.text("You are one step closer to becoming the Psychic's apprentice.");
+        (successPop).append(successText);
+        (successPop).append(successDialog);
+        $("#success").append(successPop);
     } 
 
 //Else statement that adds user guesses as a string in the user guess array and removes a guess left
@@ -39,6 +59,23 @@ var computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.l
         losses++;
         guesses.splice(0,9);
         guessesLeft=9;
+        //Run  computer guess function
+        guessfunc();
+
+        //Dynamically create alert box
+        $("#success").empty();
+        $("#failure").empty();
+        var failurePop = $("<div>");
+        failurePop.addClass("alert alert-danger alert-dismissible");
+        var failureText = $("<a>");
+        failureText.addClass("close")
+        failureText.attr("data-dismiss", "alert");
+        failureText.html("&times;");
+        var failureDialog = $("<p>");
+        failureDialog.text("The Psychic sensed you didn't have the sight...");
+        (failurePop).append(failureText);
+        (failurePop).append(failureDialog);
+        $("#failure").append(failurePop);
         }
     }
 
@@ -48,3 +85,4 @@ var computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.l
         guessesText.textContent = " " + guesses;
         guessesLeftText.textContent = " " + guessesLeft;
       };
+

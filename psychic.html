@@ -9,9 +9,8 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="assets/javascript/triviagame.js"></script>    
 <link rel="stylesheet" type="text/css" href="assets/css/psychic-style.css" /></head>
-<body>
+<body onload="guessfunc()">
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
     
@@ -39,7 +38,18 @@
 <br>
 <br>
 
+
+
 <div class = "container">
+
+  <div id="success">
+</div>
+
+<div id="failure">
+  </div>
+
+
+
   <div class="jumbotron text-center" id = "jumbo">
       <h3 id = "jumbotext1">The Psychic Welcomes You</h3> 
       <p id = "jumbotext2">You have nine tries to guess the letter that the Psychic has in mind.</p> 
@@ -53,7 +63,7 @@
       <div class="card thumbnail" id = "results">
   
       <!-- HTML sections with preset values for before the script runs-->
-      <h2 id = "rtext">The pyschic senses the following about you:</h2>
+      <h2 id = "rtext">The Psychic senses the following about you:</h2>
       <p class = "pad2">Wins:<span id="wins"> 0</span></p>
       <p class = "pad2">Losses:<span id="losses"> 0</span></p>
       <p class = "pad2">Guesses:<span id="guesses"></span></p>
