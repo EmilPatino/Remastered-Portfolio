@@ -4,8 +4,8 @@ html, body {
 
 body {
     background-image:url(../images/psychic-background.png);
-    background-repeat:no-repeat;
-    background-size:cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #jumbo {

@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>simple crystal game</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<title>Crystals Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="assets/javascript/crystals-game.js"></script>
 <link rel="stylesheet" type="text/css" href="assets/css/crystals.css">
 </head>
 
 <body>
 
-<h1 class = "header">Crystal Collector!</h1>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Emil Patino</a>
+    </div>
+          
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Portfolio</a></li>
+        </ul>
+    </div>
+        
+  </div> 
+</nav>
+<br>
+<br>
+<br>
 
-<div class= "instructions">
-    <p> You will be given a random number at the start of the game.</p>
-    <p>Thereare four crystals below. You will add a specific amount of points to your total score by clicking on a crystal.</p>    <p>You win the game by matching your score to random number, you lose the game if your total score goes above the random number.</p>
-    <p>The value of each crystal is hidden from you until you click on it.</p>
-    <p>The game will change the values of each crystal each time when the game starts.</p>
+<div class = "container">
+<div class="jumbotron text-center" id = "jumbo">
+    <h2 id = "jumbotext1">Crystal Collector!</h2> 
+    <p id = "jumbotext2"> You will be given a random number at the start of the game.</p>
+    <p id = "jumbotext2">There are four crystals below. You will add a specific amount of points to your total score by clicking on a crystal.</p>   
+    <p id = "jumbotext2">You win the game by matching your score to random number, you lose the game if your total score goes above the random number.</p>
+    <p id = "jumbotext2">The value of each crystal is hidden from you until you click on it.</p>
+    <p id = "jumbotext2">The game will change the values of each crystal each time when the game starts.</p>
+</div>
 </div>
 
-<div>
-    <div class="target"></div>
-
-    <div class="result">
+<div class = "container">
+  <div class="row">
+    <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+      <div class="card thumbnail" id = "results">
+  
         <p>Wins:<span id="wins"></span></p>
         <p>Losses:<span id="losses"></span></p>
+        <p>Target Score:<span class="target"></p>
+        <p>Total Score:<span class="score"></p>
+        
+      </div>
+    </div>
+
+    <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
     </div>
 </div>
 
-<div class="crystals">
+<div class = "container">
+  <div class="row">
+    <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
     <img id="imgCrystal1" class="crystal-images" src="assets/images/crystal-1.jpg"></img>
     <img id="imgCrystal2" class="crystal-images" src="assets/images/crystal-2.jpg"></img>
     <img id="imgCrystal3" class="crystal-images" src="assets/images/crystal-3.jpg"></img>
     <img id="imgCrystal4" class="crystal-images" src="assets/images/crystal-4.jpg"></img>
-</div>
 
-<div id="yts">
-    <p>Your total score is:</p>
-</div>
+    </div>
+    <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+  </div>
+  </div>   
 
-<div class="score"></span></div>
 
 </body>
 </html>
