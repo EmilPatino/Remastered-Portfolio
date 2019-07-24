@@ -42,7 +42,7 @@ $(".crystal-images").on("click", function() {
 
     //Win logic
     if (counter === targetNumber) {
-    alert("You Win! Crystals have randomized.");
+    alert("You Win!");
     wins++;
     //add win variable
     $("#wins").text(" " + wins);
@@ -70,7 +70,7 @@ $(".crystal-images").on("click", function() {
 
     //Lose logic
     else if (counter >= targetNumber) {
-    alert("You lose! Crystals have randomized.");
+    alert("You lose!");
     losses++;
     $("#losses").text(" " + losses);
     counter=0;
