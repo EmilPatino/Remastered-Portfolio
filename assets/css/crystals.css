@@ -9,7 +9,7 @@ body {
 }
 
 #jumbo {
-    background-color: rgba(18, 18, 19, 0.431);
+    background-color: rgba(19, 18, 19, 0.431);
     padding: 10px 30px 8px 30px;
     border-radius: 10px;
     border: 1px solid whitesmoke;
@@ -21,17 +21,21 @@ body {
 }
 
 #jumbotext2 {
-    font-size: 12px;
+    font-size: 16px;
     color: whitesmoke;
+    line-height: 14px;
 }
 
 .crystal-images {
 width: 180px;
 height: 90px;
+opacity: .75;
+border: 2px solid whitesmoke;
+border-radius: 10px;
 }
 
 #results {
-    background-color: rgba(18, 18, 19, 0.431);
+    background-color: rgba(19, 18, 19, 0.431);
     padding: 10px 30px 8px 30px;
     border-radius: 10px;
     border: 1px solid whitesmoke;
