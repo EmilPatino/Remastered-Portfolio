@@ -1,3 +1,7 @@
+function myFunction() {
+    $("#myForm")[0].reset();
+  }
+
 // An array with a for loop that randomly selects a letter.
 
 var computerGuesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];

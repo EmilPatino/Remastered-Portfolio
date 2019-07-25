@@ -37,3 +37,9 @@ font-size: 22px;
 text-align: center;
 }
 
+#mobile-content{display: none;}
+
+@media screen and (max-width: 768px) {
+    #mobile-content {display: block;}
+    }
+
