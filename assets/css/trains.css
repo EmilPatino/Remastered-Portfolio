@@ -1,0 +1,72 @@
+html, body {
+    height: auto;
+  }
+
+body {
+    background-image:url(../images/trains-background.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+#jumbo {
+    background-color: rgba(3, 3, 3, 0.63);
+    padding: 10px 30px 8px 30px;
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+}
+
+#jumbotext1 {
+    font-size: 28px;
+    color: whitesmoke;
+    font-weight: 900;
+}
+
+#displayTime{
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: 900; 
+}
+
+#jumbotext2 {
+    font-size: 20px;
+    color: whitesmoke;
+    line-height: 28px;
+    font-weight: 650;
+}
+
+.table-header{
+    text-align: center;
+}
+
+#train-table{
+    color: whitesmoke;
+    font-size: 14px;
+    line-height: 8px;
+    font-weight: 650;
+}
+
+.hover tr:hover{
+    background-color: gray;
+}
+
+.form-text{
+    color: whitesmoke
+}
+
+.input{
+    background-color: rgba(3, 3, 3, 0.63);
+    color: whitesmoke;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#add-train-btn{
+    background-color: rgba(3, 3, 3, 0.63);
+    border-color: whitesmoke;
+}
+
+#add-train-btn:hover{
+    border-color: rgba(36, 75, 146, 0.691);
+    font-weight: bold;
+}

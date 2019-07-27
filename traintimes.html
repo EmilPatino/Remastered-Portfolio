@@ -4,83 +4,107 @@
 
 <head>
 
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Train Tracker</title>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/trains.css">
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-
-    <div class="jumbotron" style="background-color: rgba(115, 4, 179, 0.733); color: white; font-weight: bold">
-      <h1 class="text-center">Train Tracking Service</h1>
-      <h3 class="text-center" id="displayTime"></h3>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Emil Patino</a>
     </div>
+          
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Portfolio</a></li>
+        </ul>
+    </div>
+        
+  </div> 
+</nav>
+<br>
+<br>
+<br>
 
-    <div class="row">
+<div class = "container">
+<div class="jumbotron text-center" id = "jumbo">
+    <h2 id = "jumbotext1">Train Tracking Service</h2> 
+    <h2 id = "displayTime"></h2>
+</div>
+</div>
 
-      <div class="col-md-12">
-        <div class="card mb-4">
-          <div class="card-header" style= "background:blueviolet; color: white; font-weight: bold">Current Train Schedule</div>
-          <div class="card-body">
-            <table class="table table-sm table-hover" id='train-table'>
-              <thead>
-                <tr>
-                  <th scope="col">Train Name</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">Frequency (min)</th>
-                  <th scope="col">Next Arrival</th>
-                  <th scope="col">Minutes Away</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
+<div class = "container">
+  <div class="jumbotron text-center" id = "jumbo">
+      <h2 id = "jumbotext2">Train Schedules</h2> 
+      <div class="row">
+    <div class="table-responsive">
+      <table class="table" id='train-table'>
+        <thead>
+          <tr>
+            <th class = "table-header" scope="col">Train Name</th>
+            <th class = "table-header" scope="col">Destination</th>
+            <th class = "table-header" scope="col">Frequency (min)</th>
+            <th class = "table-header" scope="col">Next Arrival</th>
+            <th class = "table-header" scope="col">Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody class = "hover">
+        </tbody>
+      </table>
+    </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card mb-4">
-          <div class="card-header" style= "background:blueviolet; color: white; font-weight: bold">Add Train</div>
-          <div class="card-body">
-
-            <form>
-              <div class="form-group">
-                <label for="train-name-input">Train Name</label>
-                <input class="form-control" id="train-name-input" type="text">
-              </div>
-              <div class="form-group">
-                <label for="destination-input">Destination</label>
-                <input class="form-control" id="destination-input" type="text">
-              </div>
-              <div class="form-group">
-                <label for="time-input">First Train Time (HH:mm -military time)</label>
-                <input class="form-control" id="time-input" type="text">
-              </div>
-              <div class="form-group">
-                <label for="frequency-input">Frequency (min)</label>
-                <input class="form-control" id="frequency-input" type="text">
-              </div>
-              <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
-            </form>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+</div>
+
+<div class = "container">
+  <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+
+  <div class="jumbotron text-center col-xs-12 col-sm-12 col-md-8 col-lg-8" id = "jumbo">
+      <h2 id = "jumbotext2">Add Train</h2> 
+  
+  <div class="row">
+    <form class = "form-text">
+      <div class="form-group">
+        <label for="train-name-input">Train Name</label>
+        <input class="form-control input" id="train-name-input" type="text">
+      </div>
+      <div class="form-group">
+        <label for="destination-input">Destination</label>
+        <input class="form-control input" id="destination-input" type="text">
+      </div>
+      <div class="form-group">
+        <label for="time-input">First Train Time (Military time - 24hr)</label>
+        <input class="form-control input" id="time-input" type="text">
+      </div>
+      <div class="form-group">
+        <label for="frequency-input">Frequency (min)</label>
+        <input class="form-control input" id="frequency-input" type="text">
+      </div>
+      <button class="btn btn-primary" id="add-train-btn">Submit</button>
+    </form>
+  </div>
+  
+  </div>
+
+  <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+</div>
+<br>
+<br>
 
   <!-- JavaScript -->
   <script src="assets/javascript/trainTrackerLogic.js"></script>

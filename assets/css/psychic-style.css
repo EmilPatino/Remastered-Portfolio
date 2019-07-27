@@ -35,11 +35,21 @@ body {
 #rtext{
 font-size: 22px;
 text-align: center;
+padding-bottom: 8px;
+}
+
+.pad2{
+    font-weight: 750;
+    line-height: 15px;   
 }
 
 #mobile-content{display: none;}
 
 @media screen and (max-width: 768px) {
-    #mobile-content {display: block;}
+    #mobile-content {display: block;
+    text-align: center;
+    color: rgb(78, 12, 12);
+    font-size: 20px;    
+    }
     }
 

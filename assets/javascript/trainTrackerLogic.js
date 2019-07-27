@@ -15,7 +15,7 @@ var database = firebase.database();
 function currentTime() {
   var time = moment().format('HH:mm');
   $("#displayTime").html(time);
-  setTimeout(currentTime, 1000);
+  setTimeout(currentTime, 15000);
 };
 
 $("#add-train-btn").on("click", function(event) {
@@ -73,9 +73,5 @@ database.ref().on("child_added", function(childSnapshot) {
   $("#train-table > tbody").append(newRow);
 
 });
-
-setInterval(function() {
-    window.location.reload();
-  }, 60000);
 
 currentTime();
