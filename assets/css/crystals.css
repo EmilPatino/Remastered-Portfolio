@@ -1,6 +1,12 @@
 html, body {
-    height: auto;
+    height: 100%;
   }
+
+  @media screen and (max-width: 403px) {
+    html, body {
+        height: auto;
+      }
+    }
 
 body {
     background-image:url(../images/crystal-background.jpg);
@@ -29,11 +35,12 @@ body {
 }
 
 .crystal-images {
-width: 180px;
+width: 175px;
 height: 90px;
 opacity: .75;
 border: 2px solid whitesmoke;
 border-radius: 10px;
+margin: 3px;
 }
 
 #results {
@@ -41,3 +48,4 @@ border-radius: 10px;
     padding: 10px 30px 8px 30px;
     border-radius: 10px;
     border: 1px solid whitesmoke;
+}

@@ -1,6 +1,12 @@
 html, body {
-    height: auto;
+    height: 100%;
   }
+
+  @media screen and (max-width: 403px) {
+    html, body {
+        height: 100%;
+      }
+    }
 
 body {
     background-image:url(../images/psychic-background.png);
