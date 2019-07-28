@@ -5,6 +5,7 @@ $("#search-btn").on("click", function (event) {
     $("#good-price-result").text("Not Available");
     $("#mint-price-result").text("Not Available");
     $("#hidden").css("display", "block");
+    $('body,html').css("height", "auto");
 
     var sTitle = $("#title-input").val().trim();
     var sArtist = $("#artist-input").val().trim();
