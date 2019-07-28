@@ -2,113 +2,109 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link href="collections.html">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <title>Record Collector</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/collectorStyle.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Baumans&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Record Collector</title>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/collectorStyle.css">
 </head>
 
-<body background="assets/images/floor-tile.png">
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: maroon">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarTogglerDemo02">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#!">Record Collector</a>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#!">Search <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="collections.html">Collection</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <br>
-
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="jumbotron" style="background-color: maroon; color: white; font-weight: bold">
-      <h3 class="text-center">Welcome to Record Collector!</h3>
-      <h5 class="text-center">The App that allows you to search for records and keep track of your
-        collections.</h5>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Emil Patino</a>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card mb-4">
-          <div class="card-header" style="background:maroon; color: white; font-weight: bold">Search for an Album</div>
-          <div class="card-body" style="background-color: rgb(248, 248, 221)">
-
-            <form>
-              <div class="form-group">
-                <label for="title-input"><b>Title (Required)</b></label>
-                <input class="form-control" style="background-color: beige" id="title-input" type="text">
-              </div>
-              <div class="form-group">
-                <label for="artist-input"><b>Artist Name (Required)</b></label>
-                <input class="form-control" style="background-color: beige" id="artist-input" type="text">
-              </div>
-              <!-- <div class="form-group">
-                <label for="genre-input"><b>Genre</b></label>
-                <input class="form-control" style="background-color: beige" id="genre-input" type="text">
-              </div>
-              <div class="form-group">
-                <label for="year-input"><b>Year Released</b></label>
-                <input class="form-control" style="background-color: beige" id="year-input" type="text">
-              </div> -->
-              <button type="button" class="btn btn-outline-dark float-right" id="search-btn">Search</button>
-            </form>
-
-          </div>
-        </div>
-      </div>
+          
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="collections.html">Collection</a></li>
+        </ul>
     </div>
+        
+  </div> 
+</nav>
+<br>
+<br>
+<br>
 
+<div class = "container">
+  <div class="jumbotron text-center" id = "jumbo">
+      <h2 id = "jumbotext1">Welcome to Record Collector</h2> 
+      <h2 id = "jumbotext2">The App that allows you to search for records and keep track of your
+        collections.</h2>
+  </div>
   </div>
 
-  <div class="container" id="hidden">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card mb-4">
-          <div class="card-header" style="background:maroon; color: white; font-weight: bold">Search Result</div>
+<div class = "container">
+  <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
 
-          <div class="row no-gutters" style="background-color: rgb(248, 248, 221)">
-            <div class="col-md-4">
-              <img src="" class="card-img" id="image-result">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><b> Title: </b> <span id="title-result"> Title Example</span></h5>
-                <p class="card-text"><b>Artist Description: <span id="artistName"></span></b><span
-                    id="description-result">Some quick example text to build
-                    on the card title and make up the bulk of the card's content.</span></p>
-                <p class="card-text"><b>Album Description: <span id="aName"></span></b><span id="snippet"></span></li>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Genre: </b><span
-                        id="genre-result"></span></li>
-                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Year Released: </b><span
-                        id="year-result"></span></li>
-                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Fair Pricing: </b><span
-                        id="fair-price-result"></span></li>
-                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Good Pricing: </b><span
-                        id="good-price-result"></span></li>
-                    <li class="list-group-item" style="background-color: rgb(248, 248, 221)"><b>Mint Pricing: </b><span
-                        id="mint-price-result"></span></li>
-                  </ul>
+  <div class="center col-xs-12 col-sm-12 col-md-8 col-lg-8" id = "jumbo">
+      <h2 id = "jumbotext2">Search for an Album</h2> 
+  
+  <div class="row">
+    <form>
+      <div>
+        <label>Title</label>
+        <input class="form-control input" id="title-input" type="text">
+      </div>
+      <div>
+        <label>Artist Name</label>
+        <input class="form-control input" id="artist-input" type="text">
+      </div>
+      <button class="btn btn-primary" id="search-btn">Search</button>
+    </form>
+  </div>
+  
+  </div>
+
+  <div class="col-xs-0 col-sm-0 col-md-2 col-lg-2"></div>
+</div>
+
+<br>
+<br>
+
+<div class="container" id="hidden">
+  <div id = "jumbo">
+    <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="search-banner">
+    <h2 id = "search-result">Search Result</h2> 
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <img src="" id="image-result">
+      </div>
+            
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="h-info">
+        <p><b> Title : </b> <span id="title-result"></span></p>
+        <p><b>Artist Description : <span id="artistName"></span></b><span id="description-result">Please enter the artist's name in the search for information.</span></p>
+        <p><b>Album Description : <span id="aName"></span></b><span id="snippet"></span></p>      
+        <p><b>Genre : </b><span id="genre-result"></span></p>
+        <p><b>Year Released : </b><span id="year-result"></span></p>
+      </div>
+
+        <div class= "r-price">
+          <p><b>Fair Pricing : </b><span id="fair-price-result"></span></p>
+          <p><b>Good Pricing : </b><span id="good-price-result"></span></p>
+          <p><b>Mint Pricing : </b><span id="mint-price-result"></span></p>
+        </div>
                   <br>
-                  <button type="button" class="btn btn-outline-dark float-right" id="collection-btn">Add to
+                  <button type="button" class="btn btn-primary" id="collection-btn">Add to
                     Collection</button>
+                    <button type="button" class="btn btn-primary" id="wishlist-btn">Add to
+                        Wishlist</button>
                   <br><br>
 
               </div>
@@ -117,11 +113,10 @@
 
 
 
-        </div>
-      </div>
-    </div>
   </div>
-  </div>
+  <br>
+  <br>
+     
 
   <script>
 
@@ -242,25 +237,9 @@
         });
       });
     };
-
     artistBlurb();
     artistDescription();
-
   </script>
-
-  <style>
-    .limitPics {
-      padding-top: 30px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 90%;
-    }
-
-    #hidden {
-      display: none;
-    }
-  </style>
 
 <script src="assets/javascript/collector.js"></script>
 

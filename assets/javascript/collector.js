@@ -71,7 +71,6 @@ var aArtist = $("#artist-input").val();
 
 var queryURL = "https://api.discogs.com/database/search?release_title=" + aTitle + "&artist=" + aArtist + "&format=vinyl&per_page=1&page=1&key=CQwYyYowOAghyybYpMYL&secret=hlsXvJXvbpgfeoNJJHhOjEmSWzBgKvnY";
 
-
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -140,8 +139,6 @@ $.ajax({
         $("#aName").html('<a href="https://en.wikipedia.org/?curid=' + pageId + '">' + searchTitle + '<i>(wikipedia excerpt)</i></a>:');
         $("#snippet").html('...' + searchSnippet + '...');
         console.log(queryURL);
-
-
       });
     });
   };
@@ -167,11 +164,9 @@ $.ajax({
 
         console.log(searchTitle2);
 
-
         $("#artistName").html('<a href="https://en.wikipedia.org/?curid=' + pageId2 + '">' + searchTitle2 + '<i>(wikipedia excerpt)</i></a>:');
         $("#description-result").html('...' + searchSnippet2 + '...');
         console.log(queryURL2);
-
 
       });
     });
