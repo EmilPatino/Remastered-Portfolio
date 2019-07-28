@@ -1,9 +1,9 @@
 html, body {
-    height: auto;
+    height: 100%;
   }
 
 body {
-    background-image:url(../images/crystal-background.jpg);
+    background-image:url(../images/gif-background.jpg);
     background-repeat:no-repeat;
     background-size: cover;
 }
@@ -28,16 +28,36 @@ body {
     font-weight: 650;
 }
 
-.crystal-images {
-width: 180px;
-height: 90px;
-opacity: .75;
-border: 2px solid whitesmoke;
+.gif-size {
+width: 202px;
+height: auto;
 border-radius: 10px;
+margin: 6px;
 }
 
-#results {
+.float-right{
+    float: right;
+}
+
+.btn {
+    margin: 8px;
+}
+
+#gif-container {
     background-color: rgba(19, 18, 19, 0.431);
     padding: 10px 30px 8px 30px;
     border-radius: 10px;
     border: 1px solid whitesmoke;
+    display: none;
+}
+
+#gif-input{
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .gif-size{
+    width:250px;
+    height: auto;    
+    }
+    }

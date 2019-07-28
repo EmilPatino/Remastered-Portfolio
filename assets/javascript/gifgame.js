@@ -1,6 +1,6 @@
 //Array for buttons & searches  
     // Pre-determined Supers
-    var gifs = ["Batman", "The Green Lantern", "Super Man", "Super Woman"];
+    var gifs = ["F-22 Raptor", "Rick and Morty", "Legend of Zelda", "Star Wars", "Mario Bros", "Adventure Time"];
 
 // This is the function that will go get the gifs
   function displayGif() {
@@ -18,25 +18,22 @@
 
     //Erase previous search
       $("#gif-section").empty();
+      $("#gif-container").css("display", "block");
+      $('body,html').css("height", "auto");
 
     // Store object from the AJAX method and loop through each of the ten results
       var results = response.data;
       console.log(results);
       for (var i = 0; i < results.length; i++) {
 
-    // Div to hold rating & gif
-      var heroDiv = $("<div>");
-
       // Add rating and gif within a paragraph and image for each result and append
-      var pRating = $("<p>").text("Rating: " + results[i].rating);
       var gifImage = $("<img>").attr({"src": results[i].images.fixed_height_still.url, "data-still": results[i].images.fixed_height_still.url, "data-animate": results[i].images.fixed_height.url, "data-state": "still", "Class": "gifclick"});
+      gifImage.addClass("gif-size");
       console.log((gifImage).attr("data-still"));
       console.log((gifImage).attr("data-animate"));
       console.log((gifImage).attr("data-state"));
       console.log((gifImage).attr("Class"));
-      heroDiv.append(gifImage);
-      heroDiv.append(pRating);          
-      $("#gif-section").prepend(heroDiv);
+      $("#gif-section").prepend(gifImage);
       }
 
         $(".gifclick").on("click", function() {
@@ -57,7 +54,7 @@ function renderButtons() {
     $("#gif-buttons").empty();
     for (var i = 0; i < gifs.length; i++) {
       var searchButton = $("<button>");
-        searchButton.addClass("gif-btn");
+        searchButton.addClass('btn gif-btn btn-primary');
         searchButton.attr("data-super", gifs[i]);
         searchButton.text(gifs[i]);
       $("#gif-buttons").append(searchButton);
