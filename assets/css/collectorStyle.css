@@ -141,3 +141,14 @@ margin-bottom: 5px;
   font-size: 16px;
   color: whitesmoke;
 }
+
+#collection-table{
+  color: whitesmoke;
+  font-size: 14px;
+  line-height: 8px;
+  font-weight: 650;
+}
+
+.hover tr:hover{
+  background-color: rgba(77, 77, 77, 0.561);
+}

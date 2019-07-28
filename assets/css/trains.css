@@ -46,7 +46,7 @@ body {
 }
 
 .hover tr:hover{
-    background-color: gray;
+    rgba(77, 77, 77, 0.561);
 }
 
 .form-text{
