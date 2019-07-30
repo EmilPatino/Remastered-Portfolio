@@ -82,6 +82,7 @@ html, body {
     color: #777777;
     font-family: "Helvetica Neue", sans-serif;
     line-height: 33px;
+    text-align: justify;
   }
 
   #contact-text{
