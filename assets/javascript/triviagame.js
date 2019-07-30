@@ -133,7 +133,7 @@ number = 30;
     noanswer = 5 - right - wrong;
 
     if (right === 5){
-      $("#judgement").html("<p> Great Job!</p>");
+      $("#judgement").html("<p> Wubba Lubba Dub Dub!</p>");
     }
     else {
       $("#judgement").html("<p> Get your shit together...</p>");
