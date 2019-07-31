@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+    min-height: 100%;
   }
 
 body {
@@ -54,10 +54,3 @@ margin: 6px;
 #gif-input{
     margin-top: 15px;
 }
-
-@media screen and (max-width: 768px) {
-    .gif-size{
-    width:310px;
-    height: auto;    
-    }
-    }
