@@ -17,11 +17,6 @@ html, body {
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
- 
-  .banner {
-    border-top: 2px solid rgb(0, 148, 148);
-    margin-top: 2px;
-  }
 
   #motto {
     text-align: center;
@@ -101,7 +96,7 @@ html, body {
  }
         
 /* Style the footer */
-.footer {
+#footer {
     background-color: #666666;
     padding: 16px 0px;
     text-align: center;
@@ -112,15 +107,14 @@ html, body {
  }
 
 .card {
-  box-shadow: 0;
+  box-shadow: 2px 4px rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 4px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  margin-bottom: 20px;
 }
 
 .card:hover {
-  box-shadow: 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 4px 6px rgba(0,0,0,0.2);
 }
 
 img {
@@ -128,14 +122,14 @@ img {
   border-radius: 10px 10px 5px 5px;
 }
 
-.github {
-  color: #666666;
-  text-align: center;
-}
-
 .title {
+  border-top: 2px solid rgb(0, 148, 148);
+  margin-top: 2px;
   color: #666666;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: ivory;
 }
 
 a:link {
@@ -157,4 +151,20 @@ a:active {
   color: rgb(0, 62, 104);
   background-color: transparent;
   text-decoration: underline;
+}
+
+#link{
+  max-width: 40px;
+    height: auto;
+    display: block;
+    float: left;
+}
+
+#github{
+  max-width: 35px;
+    height: auto;
+    display: block;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
 }
