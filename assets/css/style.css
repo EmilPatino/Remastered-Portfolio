@@ -157,7 +157,8 @@ a:active {
   max-width: 40px;
     height: auto;
     display: block;
-    float: left;
+    float: right;
+    margin-top: 110px;
 }
 
 #github{
@@ -166,5 +167,8 @@ a:active {
     display: block;
     margin-left: 5px;
     margin-right: 5px;
-    float: left;
-}
+    float: right;
+    margin-top: 110px;
+  }
+
+  
