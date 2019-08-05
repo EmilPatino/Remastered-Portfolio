@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<script src="assets/javascript/graphs.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -28,7 +28,7 @@
           <li><a href="#section1">About Me</a></li>
           <li><a href="#section2">Portfolio</a></li>
           <li><a href="#section3">Articles</a></li>
-
+          <li><a href="#section4">Skills</a></li>
         </ul>
       </div>
     </div>
@@ -147,10 +147,50 @@
 <div class="container content" id= "section3">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <h2 class="boxheader">Articles (Coming Soon!)</h2>
+      <h2 class="boxheader">Articles</h2>
     </div>
   </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="card">
+          <a href="">
+            <img src="assets/images/comingsoon.png" alt="coming soon" style="width:100%">
+          </a>
+          <div class= "title">
+              <h4><a href="">Coming Soon</a></h4>
+            </div>
+      </div>
+  </div>
+
+
 </div>
+
+<!-- Skills Container -->
+<div class="container content" id= "section4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h2 class="boxheader">Skill Composition</h2>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="chart_wrap"><span class="center">Business Skills</span>
+          <div class="chart_div" id="donutchartOne"></div> 
+          </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div id="techSkills" class="chart_wrap"><span class="center">Technical Skills</span>
+        <div class="chart_div" id="donutchartTwo"></div>
+        </div>
+      </div>
+  
+    </div>
+
+</div>
+
+<br><br>
 
 <div id="footer">
 Emil Patino

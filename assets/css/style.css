@@ -179,4 +179,19 @@ a:active {
       margin-top: 110px;
   }
 
+  .center{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(114, 114, 114);
+    font-family: "Helvetica Neue", sans-serif;  
+  }
+
+  #techSkills{
+    margin-top: 0px;
+  }
   
+  @media screen and (max-width: 768px) {
+    #techSkills{
+      margin-top: 20px;
+    }
+  }
