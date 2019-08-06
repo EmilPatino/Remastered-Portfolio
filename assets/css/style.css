@@ -20,7 +20,7 @@ html, body {
 
   #motto {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     color: rgb(114, 114, 114);
     font-family: "Helvetica Neue", sans-serif;
   }
@@ -74,9 +74,11 @@ html, body {
   }
 
   #biotext{
+    font-size: 16px;
+    font-weight: 545;
     color: #777777;
     font-family: "Helvetica Neue", sans-serif;
-    line-height: 28px;
+    line-height: 30px;
     text-align: justify;
   }
 
