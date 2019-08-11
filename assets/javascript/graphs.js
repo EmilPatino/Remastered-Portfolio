@@ -28,7 +28,8 @@ function businessGraph() {
           chartArea:{
             left: "0%",
             top: "10%",
-            height: "90%",
+            bottom: "10%",
+            height: "80%",
             width: "100%"},
           pieHole: 0.5,
           pieSliceText: 'none',
@@ -36,6 +37,7 @@ function businessGraph() {
           
           legend: { position: 'labeled', textStyle: 
           {color: 'rgb(114, 114, 114)',
+          // bold: true,
           fontName: '"Helvetica Neue", sans-serif',
           fontSize: '10px'},
         },
@@ -77,7 +79,8 @@ function technicalGraph() {
           chartArea:{
             left: "0%",
             top: "10%",
-            height: "90%",
+            bottom: "10%",
+            height: "80%",
             width: "100%"},
           pieHole: 0.5,
           tooltip: { trigger: 'none' },
@@ -85,6 +88,7 @@ function technicalGraph() {
           
           legend: { position: 'labeled', textStyle: 
           {color: 'rgb(114, 114, 114)',
+          // bold: true,
           fontName: '"Helvetica Neue", sans-serif',
           fontSize: '10px'},
         },
