@@ -43,13 +43,13 @@ function businessGraph() {
         },
 
           slices: {
-            0: { color: '#513B56' },
-            1: { color: '#0E103D' },
-            2: { color: '#A5668B' },
-            3: { color: '#4A4E69' },
-            4: { color: '#9C89B8' },
-            5: { color: '#69306D' },
-            6: { color: '#D3BCC0' }
+            0: { color: '#69306D' },
+            1: { color: '#A5668B' },
+            2: { color: '#9C89B8' },
+            3: { color: '#F0A6CA' },
+            4: { color: '#EFC3E6' },
+            5: { color: '#B8BEDD' },
+            6: { color: '#F0E6EF' }
           }
         };
         
@@ -97,8 +97,8 @@ function technicalGraph() {
             0: { color: '#75DADD' },
             1: { color: '#4F8F91' },
             2: { color: '#009499' },
-            3: { color: '#17393A' },
-            4: { color: '#004244' },
+            3: { color: '#065A82' },
+            4: { color: '#1C7293' },
             5: { color: '#D8DBE2' },
             6: { color: '#A9BCD0' }
           }
