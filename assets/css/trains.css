@@ -46,11 +46,11 @@ body {
 }
 
 .hover tr:hover{
-    rgba(77, 77, 77, 0.561);
+    background-color: rgba(77, 77, 77, 0.561);
 }
 
 .form-text{
-    color: whitesmoke
+    color: whitesmoke;
 }
 
 .input{
