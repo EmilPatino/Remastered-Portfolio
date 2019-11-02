@@ -61,6 +61,16 @@ html, body {
     margin-right: auto;
   }
 
+  #blogpic {
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+
+  }
+
   @media screen and (min-width: 768px) {
     #mypic {
       float: left;
