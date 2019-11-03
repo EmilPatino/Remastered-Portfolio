@@ -46,10 +46,10 @@ html, body {
   border-bottom: 2px solid;
   border-bottom-color: #cccccc;
   color:#4aaaa5;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
   padding-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 /*MyPic Styling*/
@@ -62,7 +62,7 @@ html, body {
   }
 
   #blogpic {
-    max-width: 700px;
+    max-width: 500px;
     height: auto;
     display: block;
     margin-left: auto;
