@@ -65,11 +65,11 @@ function technicalGraph() {
     data.addRows([
         ['Cloud Architecture (AWS)', 40],
         ['HTML/CSS', 15],
-        ['JavaScript/jQuery', 15],
+        ['JavaScript', 15],
         ['Node.js', 10],
         ['SQL', 10],
-        ['NoSQL/JSON', 5],
-        ['AJAX', 5]
+        ['MongoDB', 5],
+        ['React', 5]
         ]);
 
         var options = {
