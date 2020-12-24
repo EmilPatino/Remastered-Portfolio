@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Compliance Starts at the Source - 6 Tools for Practical Controls</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="assets/javascript/graphs.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="index.html">Emil Patino</a>
+          </div>
+                
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="https://www.linkedin.com/pulse/compliance-starts-source-6-tools-practical-controls-emil-pati%C3%B1o/">LinkedIn Article</a></li>
+              </ul>
+          </div>
+              
+        </div> 
+      </nav>
+      <br>
+  
+<!-- About Me Container -->
+<div class="container" id= "section1">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+          <h2 class="blogheader start"></h2>
+        </div>
+    </div>
+       
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id= "textbox">
+                    <p><img id="blogpic" class= "img-rounded" src="assets/images/Git.png" alt="GitHub GitLab BitBucket" width="100%"> </p>
+                    <br>  
+                    <p id="motto">Compliance Starts at the Source - 6 Tools for Practical Controls</p>
+                    <br>
+                    <p id="biotext">Developers are not meant to be subject matter experts on compliance. Their efforts are best spent doing what they do best: coding. Compliance controls often fail to take into consideration the impact on the development lifecycle by expecting tech teams to adopt new behaviors that are unnatural to development. This approach to compliance not only results in ineffective controls but it also negatively impacts morale since developers find purpose in coding, not deciphering intricate policy. <br><br> Risk and compliance teams can ensure continuous compliance and minimal impact to delivery by developing controls that are integrated within the development lifecycle. Fortunately, source code management (SCM) tools used by developers on a daily basis can empower administrative users to prevent non-compliant code from ever making it into production with the use of security plugins and built-in features. Users can quickly and easily incorporate controls that alert developers on non-compliance, provide remediation options, and block pull requests. <br><br> The following are 6 SCM plugins and built-in features that risk and compliance teams can leverage to assist development teams to meet key compliance requirements without forcing them to adopt burdensome tools or processes.</p>
+                    <br>
+                    <p id="biotext"><a href="https://docs.github.com/en/free-pro-team@latest/actions"><b>GitHub Actions: </b></a> GitHub Actions enable users to create customized, automated development workflows within a code repository. These workflows may trigger checks or controls upon certain events or pre-determined schedules. For example, an organization can configure a workflow to execute a vulnerability scan at the creation of a pull request and determine corresponding actions based on the results. Users may create their own actions or leverage actions developed by <a href="https://github.com/marketplace?category=security&type=actions"><b>GitHub community</b></a>. GitHub Actions provide risk and compliance teams a powerful tool that they can leverage to ensure that code meets regulatory requirements throughout the development lifecycle, not only in production.</p>
+                    <br>
+                    <p id="biotext"><b>Mandatory Peer Reviews: </b>The transition to DevOps introduces challenges to maintaining separation of duties as developers become responsible for development, quality assurance, and operations. Separation of duties can be easily enforced within SCMs by requiring peer reviews before merging the code into the release/master branch. Requiring at least two peer reviews helps to dissuade developers from auto-approving while encouraging a broader conversation on coding best practices. </p>
+                    <br>
+                    <p id="biotext"><b>Static Code Analysis: </b>Developing and maintaining secure systems is critical not only for compliance but also to protect sensitive data from ever-increasing cybercrime. Modern DevOps practices require that development teams perform their own security scanning and remediation. This adversely impacts delivery as teams leverage multiple disparate systems to mitigate vulnerabilities. This requires either a tremendous amount of discipline from the teams or elaborate auditing mechanisms to track compliance. Organizations can leverage SCM plugins such as <a href="https://docs.shiftleft.io/home"><b>ShiftLeft’s NextGen Static Analysis</b></a> to execute scans within a pull request and block merges until remediation occurs. </p>
+                    <br>
+                    <p id="biotext"><b>Open Source Scanning: </b>Open source software (OSS) has become critical to modern development as it empowers teams to focus on features that add business value rather than the technical nuts and bolts. OSS may unfortunately introduce a host of security vulnerabilities requiring teams to keep dependencies updated or migrate off unsupported OSS. There are multiple tools that assist with protecting organizations against vulnerable OSS; one great example is WhiteSource. <a href="https://whitesource.atlassian.net/wiki/spaces/WD/pages/820183063/Repo+Integrations"> <b>WhiteSource offers repository integrations </b></a> for GitLab, GitHub, BitBucket, and Azure DevOps that continuously scan code repositories and allow admins to block pull requests with security findings. WhiteSource also offers <a href="https://docs.renovatebot.com/"> <b>WhiteSource Renovate </b></a> that automatically creates pull requests with updated open source dependencies. </p>
+                    <br>
+                    <p id="biotext"><b>Infrastructure-as-Code Scanning: </b>The rise of DevOps and cloud computing has empowered tech teams to own the infrastructure by defining it as code. Infrastructure can be torn down and rebuilt with every release and access to production boxes can be stringently limited to enforce separation of duties. This shift in the operational paradigm empowers teams but it also adds the daunting task of continuously securing the application’s infrastructure. Palo Alto has created <a href="https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/prisma-cloud-devops-security.html"><b>Prisma Cloud</b></a> to help organizations tackle this new security and compliance challenge. Administrators have the ability to define policies that IaC templates are scanned against. Prisma Cloud can be integrated with SCMs to scan for IaC noncompliance upon the creation of merge requests. Not only does Prisma Cloud empower tech teams but it may also facilitate control testing by narrowing the scope of audits to the IaC policies.</p>
+                    <br>
+                    <p id="biotext"><b>Sensitive Data Scanning: </b>Data protection is absolutely critical with recent high profile data breaches and new data privacy laws. Organizations must establish effective data protection controls or become vulnerable to audits and incidents that result in stiff financial penalties and irreparable damage to the brand. Sensitive data must be housed in encrypted systems and never within a repository. Compliance teams may ensure that sensitive data never enters the codebase by leveraging tools like <a href="https://www.polymerhq.io/polymer-for-free"><b>Polymer VCO</b></a> that integrate with SCMs to proactively monitor, alert, and redact sensitive data within a pull request or entire repository. Polymer VCO also allows users to set up custom identifiers unique to an organization. </p>
+                    <br>
+                    <p id="biotext"><b>Compliance needs to adapt to the new development operating model. The future of effective compliance needs to be rethought to enable rapid code development with minimal resources.</b></p>
+                    <br>
+                  </div>
+        </div>
+    </div>
+</div>
+    
+<br><br>
+
+<div id="footer">
+Emil Patino
+</div>
+
+
+</body>
+</html>
